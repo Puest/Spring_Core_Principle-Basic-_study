@@ -1,7 +1,10 @@
 package hello.core.scan;
 
 import hello.core.AutoAppConfig;
+import hello.core.discount.DiscountPolicy;
+import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
+import hello.core.order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -19,6 +22,5 @@ public class AutoAppConfigTest {
         MemberService memberService = ac.getBean(MemberService.class);
         // memberService 인스턴스가 MemberService 타입인지 검증
         Assertions.assertThat(memberService).isInstanceOf(MemberService.class);
-
     }
 }

@@ -5,7 +5,10 @@ import hello.core.member.Member;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RateDiscountPlicy implements DiscountPolicy {
+//@Qualifier("mainDiscountPolicy") → 문자를 잡을 수 없기 때문에 아래와 같이 사용
+//@MainDiscountPolicy
+//@Primary    //우선권 부여
+public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10; //1000원 할인
 
