@@ -1,11 +1,9 @@
 package hello.core.order;
 
-import hello.core.annotation.MainDiscountPolicy;
 import hello.core.discount.DiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //@Component
@@ -43,7 +41,7 @@ public class OrderServiceImpl implements OrderService {
     //1. 생성자 주입(생성자가 1개일 경우 @Autowired 생략 가능)
 //  @RequiredArgsConstructor에 의해 입력 필요 X(가끔 생성자 직접 필요시에만 사용)
 //    @Autowired private DiscountPolicy rateDiscountPolicy;//필드명으로 지정
-    @Autowired
+    /*@Autowired 생성자 1개는 생략 O*/
     //파라미터명으로 지정 discountPolicy → rateDiscountPolicy
     //@Qualifier는 @Qualifier를 찾는용도로만 사용하자.
     public OrderServiceImpl(MemberRepository memberRepository, /*@Qualifier("fixDiscountPolicy")*/DiscountPolicy discountPolicy) {
